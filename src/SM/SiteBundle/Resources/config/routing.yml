@@ -1,0 +1,7 @@
+sm_site_homepage:
+    path:     /
+    defaults: { _controller: SMSiteBundle:Default:index }
+
+produit_route:
+    path:     /produit/{id}
+    defaults: { _controller: SMSiteBundle:Produit:produit }

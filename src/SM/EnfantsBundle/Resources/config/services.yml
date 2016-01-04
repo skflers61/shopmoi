@@ -1,0 +1,7 @@
+parameters:
+#    sm_enfants.example.class: SM\EnfantsBundle\Example
+
+services:
+#    sm_enfants.example:
+#        class: %sm_enfants.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

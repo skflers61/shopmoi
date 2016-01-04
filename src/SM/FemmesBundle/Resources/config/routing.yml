@@ -1,0 +1,3 @@
+sm_femmes_homepage:
+    path:     /femmes
+    defaults: { _controller: SMFemmesBundle:Default:index }

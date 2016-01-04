@@ -1,0 +1,12 @@
+SHOP MOI
+plan d'avancement:
+
+1- Page d'accueil
+2- Base de données
+3- Page annexe
+4- Espace membre
+5- Achat
+---------------------------------
+Dernière modif:
+
+fonction jquery pour changer les grandes image en appuyant sur les petites image dans produit.twig

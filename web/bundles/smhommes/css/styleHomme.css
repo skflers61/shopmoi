@@ -1,0 +1,7 @@
+
+#sous_menu { float:right; white-space:nowrap;background:#920101; width:100%;}
+#sous_menu ul{ list-style-type: none; height:30px; font-weight: bold; float:left;}
+#sous_menu ul li{ float:left; display:inline; }
+#sous_menu ul li a{ float:left; height:30px; line-height:30px; text-decoration: none; color:#fff; padding:0 15px;}
+#sous_menu ul li a.active,
+#sous_menu ul li a:hover{ background:#fff; color:#8b0000; }

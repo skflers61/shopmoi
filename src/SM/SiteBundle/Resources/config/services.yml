@@ -1,0 +1,7 @@
+parameters:
+#    sm_site.example.class: SM\SiteBundle\Example
+
+services:
+#    sm_site.example:
+#        class: %sm_site.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

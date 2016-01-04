@@ -1,0 +1,220 @@
+{# src/OC/PlatformBundle/Resources/views/layout.html.twig #}
+
+{% extends "::layoutGenerale.html.twig" %}
+
+{% block title %}
+  Accueil - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+
+  {# On définit un sous-titre commun à toutes les pages du bundle, par exemple #}
+	
+	<!-- Main -->
+	<div id="main">
+		
+		
+		<!-- Content -->
+		<div id="content">
+			
+			<!-- Content Slider -->
+                        <div id="title" ><h3 id="first">Notre sélection</h3></div>
+			<div id="slider" class="box">
+				<div id="slider-holder">
+                                    
+					<ul>
+					    <li><a href="#"><img src="{{ asset('bundles/smsite/images/image.jpg') }}" alt="" /></a></li>
+					    <li><a href="#"><img src="{{ asset('bundles/smsite/images/gant2960.jpg') }}" alt="" /></a></li>
+					    <li><a href="#"><img src="{{ asset('bundles/smsite/images/image2960.jpg') }}" alt="" /></a></li>
+					    <li><a href="#"><img src="{{ asset('bundles/smsite/images/gant960.jpg') }}" alt="" /></a></li>
+					</ul>
+				</div>
+				<div id="slider-nav">
+					<a href="#" class="active">1</a>
+					<a href="#">2</a>
+					<a href="#">3</a>
+					<a href="#">4</a>
+				</div>
+			</div>
+			<!-- End Content Slider -->
+			
+			<!-- Products -->
+			<div class="products">
+				<div class="cl">&nbsp;</div>
+                                <div id="title"><h3>Meilleures ventes</h3></div>
+				<ul>
+				<li>
+				    	<a href="#"><img src="{{ asset(''~images.0.adresse ) }}" alt="{{ images.0.alt }}" /></a>
+                                                   
+				    	<div class="product-info">
+				    		<h3>LOREM IPSUM</h3>
+				    		<div class="product-desc">
+								<!--<h4>WOMEN’S</h4>-->
+				    			<p>{{ produits.0.description }} </p>
+				    			<strong class="price">{{ produits.0.prix }}€</strong>
+				    		</div>
+				    	</div>
+			    	</li>
+			    	<li>
+				    	<a href="#"><img src="{{ asset(''~images.1.adresse ) }}" alt="{{ images.1.alt }}" /></a>
+				    	<div class="product-info">
+				    		<h3>LOREM IPSUM</h3>
+				    		<div class="product-desc">
+								<!--<h4>WOMEN’S</h4>-->
+				    			<p>{{ produits.1.description }}</p>
+				    			<strong class="price">{{ produits.1.prix }}€</strong>
+				    		</div>
+				    	</div>
+			    	</li>
+                                <li>
+                                <a href="#"><img src="{{ asset(''~images.2.adresse ) }}" alt="{{ images.2.alt }}" /></a>
+				    	<div class="product-info">
+				    		<h3>LOREM IPSUM</h3>
+				    		<div class="product-desc">
+								<!--<h4>WOMEN’S</h4>-->
+				    			<p>{{ produits.2.description }}</p>
+				    			<strong class="price">{{ produits.2.prix }}€</strong>
+				    		</div>
+				    	</div>
+			    	</li>
+			    	<li class="last"> 
+				    	<a href="{{ path('produit_route', { 'id': produits.3.id }) }}"><img src="{{ asset(''~images.3.adresse ) }}" alt="{{ images.3.alt }}" /></a>
+				    	<div class="product-info">
+				    		<h3>LOREM IPSUM</h3>
+				    		<div class="product-desc">
+								<!--<h4>WOMEN’S</h4>-->
+				    			<p>{{ produits.3.description }}</p>
+				    			<strong class="price">{{ produits.3.prix }}€</strong>
+				    		</div>
+				    	</div>
+			    	</li>
+				</ul>
+				<div class="cl">&nbsp;</div>
+			</div>
+			<!-- End Products -->
+                            <p>
+    {# {% for produit in produits %} #}
+        
+    {# {% endfor %} #}
+    </p>
+		</div>
+		<!-- End Content -->
+		
+		
+		<div class="cl">&nbsp;</div>
+	</div>
+	<!-- End Main -->
+	
+	<!-- Side Full -->
+	<div class="side-full">
+		
+		<!-- More Products -->
+		<div class="more-products">
+			<div class="more-products-holder">
+				<ul>
+				    <li><a href="#"><img src="{{ asset('bundles/smsite/images/small1.jpg') }}" alt="" /></a></li>
+				    <li><a href="#"><img src="{{ asset('bundles/smsite/images/small2.jpg') }}" alt="" /></a></li>
+				    <li><a href="#"><img src="{{ asset('bundles/smsite/images/small3.jpg') }}" alt="" /></a></li>
+				    <li><a href="#"><img src="{{ asset('bundles/smsite/images/small4.jpg') }}" alt="" /></a></li>
+				    <li><a href="#"><img src="{{ asset('bundles/smsite/images/small5.jpg') }}" alt="" /></a></li>
+				    <li><a href="#"><img src="{{ asset('bundles/smsite/images/small6.jpg') }}" alt="" /></a></li>
+				    <li><a href="#"><img src="{{ asset('bundles/smsite/images/small7.jpg') }}" alt="" /></a></li>
+				    <li><a href="#"><img src="{{ asset('bundles/smsite/images/small1.jpg') }}" alt="" /></a></li>
+				    <li><a href="#"><img src="{{ asset('bundles/smsite/images/small2.jpg') }}" alt="" /></a></li>
+				    <li><a href="#"><img src="{{ asset('bundles/smsite/images/small3.jpg') }}" alt="" /></a></li>
+				    <li><a href="#"><img src="{{ asset('bundles/smsite/images/small4.jpg') }}" alt="" /></a></li>
+				    <li><a href="#"><img src="{{ asset('bundles/smsite/images/small5.jpg') }}" alt="" /></a></li>
+				    <li><a href="#"><img src="{{ asset('bundles/smsite/images/small6.jpg') }}" alt="" /></a></li>
+				    <li><a href="#"><img src="{{ asset('bundles/smsite/images/small7.jpg') }}" alt="" /></a></li>
+				    <li><a href="#"><img src="{{ asset('bundles/smsite/images/small1.jpg') }}" alt="" /></a></li>
+				    <li><a href="#"><img src="{{ asset('bundles/smsite/images/small2.jpg') }}" alt="" /></a></li>
+				    <li><a href="#"><img src="{{ asset('bundles/smsite/images/small3.jpg') }}" alt="" /></a></li>
+				    <li><a href="#"><img src="{{ asset('bundles/smsite/images/small4.jpg') }}" alt="" /></a></li>
+				    <li><a href="#"><img src="{{ asset('bundles/smsite/images/small5.jpg') }}" alt="" /></a></li>
+				    <li><a href="#"><img src="{{ asset('bundles/smsite/images/small6.jpg') }}" alt="" /></a></li>
+				    <li class="last"><a href="#"><img src="{{ asset('bundles/smsite/images/small7.jpg') }}" alt="" /></a></li>
+				</ul>
+			</div>
+			<div class="more-nav">
+				<a href="#" class="prev">previous</a>
+				<a href="#" class="next">next</a>
+			</div>
+		</div>
+		<!-- End More Products -->
+                
+                
+                <!-- Marques -->
+		<div class="topBrands overflow">
+                            <div id="title"><h3>Plus de 1 500 marques</h3></div>
+                            <ul>
+                                <li class="manuImageBox">
+                                    <a class="imageBox" href="gap/" name="startseite.topmarken.1.gap">
+                                    <span class="spacer">
+                                    </span> <img src="{{ asset('bundles/smsite/images/marques/gaplogosmallnew-blue.jpg') }}"  width="80" alt="GAP" class="" title="GAP"> </a>
+                                </li>
+                                <li class="manuImageBox">
+                                    <a class="imageBox" href="morgan/" name="startseite.topmarken.2.morgan">
+                                    <span class="spacer">
+                                    </span> <img src="{{ asset('bundles/smsite/images/marques/morgan-1.jpg') }}"  width="80" alt="Morgan" class="" title="Morgan"> </a>
+                                </li>
+                                <li class="manuImageBox">
+                                    <a class="imageBox" href="tommy-hilfiger/" name="startseite.topmarken.3.tommy-hilfiger">
+                                    <span class="spacer">
+                                    </span> <img src="{{ asset('bundles/smsite/images/marques/tommy-hilfiger.jpg') }}"  width="80" alt="Tommy Hilfiger" class="" title="Tommy Hilfiger"> </a>
+                                </li>
+                                <li class="manuImageBox">
+                                    <a class="imageBox" href="topshop-shop/" name="startseite.topmarken.4.topshop">
+                                    <span class="spacer">
+                                    </span> <img src="{{ asset('bundles/smsite/images/marques/topshop.jpg') }}"  width="80" alt="Topshop" class="" title="Topshop"> </a>
+                                </li>
+                                <li class="manuImageBox">
+                                    <a class="imageBox" href="g-star-shop/" name="startseite.topmarken.1-g-star">
+                                    <span class="spacer">
+                                    </span> <img src="{{ asset('bundles/smsite/images/marques/g-star-1.jpg') }}"  width="80" alt="G-Star" class="" title="G-Star"> </a>
+                                </li>
+                                <li class="manuImageBox">
+                                    <a class="imageBox" href="levis/" name="startseite.topmarken.6.levis">
+                                    <span class="spacer">
+                                    </span> <img src="{{ asset('bundles/smsite/images/marques/levis.jpg') }}"  width="80" alt="Levi's" class="" title="Levi's"> </a>
+                                </li>
+                                <li class="manuImageBox">
+                                    <a class="imageBox" href="adidas-originals/" name="startseite.topmarken.7.adidas-originals">
+                                    <span class="spacer">
+                                    </span> <img src="{{ asset('bundles/smsite/images/marques/adidas-originals-1.jpg') }}"  width="80" alt="adidas Originals" class="" title="adidas Originals"> </a>
+                                </li>
+                                <li class="manuImageBox">
+                                    <a class="imageBox" href="carhartt/" name="startseite.topmarken.8.carhartt">
+                                    <span class="spacer">
+                                    </span> <img src="{{ asset('bundles/smsite/images/marques/carhartt.jpg') }}"  width="80" alt="Carhartt" class="" title="Carhartt"> </a>
+                                </li>
+                                <li class="manuImageBox">
+                                    <a class="imageBox" href="lacoste/" name="startseite.topmarken.8.lacoste">
+                                    <span class="spacer">
+                                    </span> <img src="{{ asset('bundles/smsite/images/marques/lacoste.jpg') }}"  width="80" alt="Lacoste" class="" title="Lacoste"> </a>
+                                </li>
+                                <li class="manuImageBox">
+                                    <a class="imageBox" href="new-balance/" name="startseite.topmarken.10.new-balance">
+                                    <span class="spacer">
+                                    </span> <img src="{{ asset('bundles/smsite/images/marques/newbalance.jpg') }}"  width="80" alt="New Balance" class="" title="New Balance"> </a>
+                                </li>
+                            </ul>
+                </div>
+                <!-- End Marques -->
+                
+                
+                
+		
+		
+	</div>
+	<!-- End Side Full -->
+	
+
+	
+	
+
+
+  {# On définit un nouveau bloc, que les vues du bundle pourront remplir #}
+  {% block site_body %}
+  {% endblock %}
+
+{% endblock %}

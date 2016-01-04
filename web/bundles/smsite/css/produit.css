@@ -1,0 +1,52 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 3 déc. 2015, 22:01:44
+    Author     : adem
+*/
+
+
+#colonneImages {width: 77px; height: 482px; margin: 50px 30px 0px 20px; float: left; overflow: hidden;}
+.imagescol {border-style: ridge;border-width: 1px;}
+#bottomCouche2 {    margin-top: 80px;}
+#fleche { width: 40px; height: 40px; background-image: url('../images/icons.png'); background-position: 97px -2799px;
+          display: block; margin-top: 530px; margin-left: 37px;}
+#blockImages{width: 77px; display: inline-block;}
+#imagePrincipale{margin-left: -50px; width:500px; height:500px }
+    
+.colonne-products {  position:relative; height:482px; overflow:hidden; }
+.colonne-products ul{ list-style-type: none; height:482px; position:relative; overflow:hidden; /*width:805px;*/}
+.colonne-products ul li{ float:left; /*width:94px;*/ height:75px;margin-bottom: 6px;}
+.colonne-products ul li.last{ border-right:0; } 
+.colonne-products ul li img { border-color: rgba(220, 220, 220, 0.72);}
+.colonne-products ul li img:hover{ border-color: #000;}
+.colonne-products ul li img:active{ border-color: #000;}
+.colonne-products-holder { /*width:804px;*/ height:482px; position:relative; overflow:hidden; }
+.colonne-products-holder .jcarousel-clip{ /*width:804px;*/ height:482px; position:relative; overflow:hidden; }
+
+.colonne-nav { font-size:0; line-height:0;}
+.colonne-nav a{ position:absolute; top:40px; left:0; /*width:30px;*/ height:32px; text-indent: -4000px; z-index:3;}
+
+.colonne-nav a.next{  
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-image: url('../images/icons.png');
+    background-position: 97px -2799px;
+    display: block;
+    margin-top: 490px;
+    margin-left: 38px;
+}
+.colonne-nav a.prev{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-image: url('../images/icons.png');
+    background-position: 97px -2750px;
+    display: block;
+    margin-left: 38px;
+}
+

@@ -1,0 +1,3 @@
+sm_hommes_homepage:
+    path:     /hommes
+    defaults: { _controller: SMHommesBundle:Default:index }

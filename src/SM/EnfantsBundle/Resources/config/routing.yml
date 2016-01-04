@@ -1,0 +1,3 @@
+sm_enfants_homepage:
+    path:     /enfants
+    defaults: { _controller: SMEnfantsBundle:Default:index }

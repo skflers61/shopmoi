@@ -1,0 +1,74 @@
+{% extends "::layoutGenerale.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet"  type="text/css" media="all"   href="{{ asset('bundles/smsite/css/produit.css') }}"/>
+{% endblock %}    
+    
+{% block title %}
+ {{ parent() }}
+{% endblock %}
+
+{% block Ariane %}
+  Produit
+{% endblock %}
+
+{% block body %}
+    <div id="blockImages">
+        {% if images|length > 5 %}
+            <!--<a href="#"><div id="fleche"/></div></a>-->
+            <div class="colonne-nav">
+                    <a href="#" class="prev"></a>
+
+            </div>
+        {% endif %}
+        <div id="colonneImages" >
+            <div class="colonne-products">
+            <div class="colonne-products-holder">
+            <ul>    
+                {% for image in images %}
+
+                    {% if image.resolution == "75x75" %}
+                        <li><img src="{{ asset(''~image.adresse ) }}" alt="{{ images.0.alt }}" name="{{ image.nomImage }}" values="null" class="imagescol"/></li>
+
+                    {% endif %}
+                {% endfor %}      
+            </ul>
+            </div>
+
+
+            </div>
+        </div>
+        {% if images|length > 5 %}
+            <!--<a href="#"><div id="fleche"/></div></a>-->
+            <div class="colonne-nav">
+
+                    <a href="#" class="next"></a>
+            </div>
+        {% endif %}
+    </div>
+    
+    {% set image1 = 0 %}
+    {% for image in images %}
+        {% if image.resolution in ["1200x1200", "1400x1400", "1500x1500"] and image.nomImage starts with 'av_' %}
+            {% set image1 = image.adresse %}
+        {% endif %}
+    {% endfor %}
+    
+    <img id="imagePrincipale" src="{{ asset(''~image1 ) }}" alt="{{ images.0.alt }}" />
+    
+    <div id="description">
+        <div id="marque">
+            {{ produit.marques}}
+        </div>
+        <div id="prix">
+            
+        </div>
+        <div id="logoMarque">
+            
+        </div>
+        <div id="taille">
+            
+        </div>
+    </div>
+{% endblock %}
+
