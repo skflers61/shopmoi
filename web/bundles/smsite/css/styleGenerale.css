@@ -34,7 +34,7 @@ h1#logo a{ display:block; height:64px; text-indent: -4000px; background:url(../i
 
 .shell { width:960px; margin:0 auto; padding:10px; background:#fff; }
 
-#header {  position:relative;}
+#header {      margin-bottom: 20px; position:relative;}
 #header_background { height:64px; background:url(../images/header.gif); position:relative;    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.48);}
 
 #navigation { float:right; white-space:nowrap; }
@@ -137,7 +137,7 @@ h3.ico4 { background-image:url(../images/ico4.gif);}
 #footer a:hover{ color:#000;}
 #footer span{ padding:0 2px;}
 
-#title h3 #first{ background-color: #f3f3f3; padding: 5px 0px 6px 8px; margin: 10px 0px 10px 0px;}
+#first{ background-color: #f3f3f3; padding: 5px 0px 6px 8px; margin: 0px 0px 10px 0px;}
 #title h3{ background-color: #f3f3f3; padding: 5px 0px 6px 8px; margin: 30px 0px 10px 0px;}
 
 .topBrands {overflow: hidden; margin-bottom: 20px;}

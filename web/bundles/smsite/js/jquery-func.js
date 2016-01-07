@@ -70,23 +70,19 @@ $(document).ready(function() {
         
         //a faire
         $(".imagescol").bind("click", function(){   
-            //
+            
+            //bordure images miniatures
             $(".imagescol").attr('values', 'null');
             $(this).attr('values', 'active');
             $(".imagescol").css({
                     'border-color' : 'rgba(220, 220, 220, 0.72)'
-                   
-                });
+            });
                 
             $(this).css({
                     'border-color' : 'black'
-                   
-                });
+            });
            
-                
-                
-            $(".imagescol").css('values', 'null');
-            
+            //modification image principale
             var src1=$(this).attr('src');
             var src2=src1.substring(0, src1.lastIndexOf("/"));
             var name1=$(this).attr('name');

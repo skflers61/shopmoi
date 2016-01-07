@@ -36,18 +36,6 @@ class Produit
     private $couleur;
     
     /**
-    * @ORM\ManyToOne(targetEntity="SM\SiteBundle\Entity\Produit", cascade={"persist"})
-    * @ORM\JoinColumn(nullable=false)
-    */
-    private $marque;
-    
-    /**
-    * @ORM\ManyToOne(targetEntity="SM\SiteBundle\Entity\Produit", cascade={"persist"})
-    * @ORM\JoinColumn(nullable=false)
-    */
-    private $categorie;
-    
-    /**
      * @var float
      *
      * @ORM\Column(name="prix", type="float")
@@ -75,6 +63,13 @@ class Produit
      */
     private $nbVente;
 
+    
+    /**
+    * @ORM\ManyToOne(targetEntity="SM\SiteBundle\Entity\Marque", cascade={"persist"})
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $marque;
+    
     /**
      * Get id
      *
@@ -223,5 +218,28 @@ class Produit
     public function getCouleur()
     {
         return $this->couleur;
+    }
+
+    /**
+     * Set marque
+     *
+     * @param \SM\SiteBundle\Entity\Marque $marque
+     * @return Produit
+     */
+    public function setMarque(\SM\SiteBundle\Entity\Marque $marque)
+    {
+        $this->marque = $marque;
+
+        return $this;
+    }
+
+    /**
+     * Get marque
+     *
+     * @return \SM\SiteBundle\Entity\Marque 
+     */
+    public function getMarque()
+    {
+        return $this->marque;
     }
 }

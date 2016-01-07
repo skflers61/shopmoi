@@ -67,35 +67,36 @@ class __TwigTemplate_9763c22660f3583a0dcbc16e28201b0f2dd6f666822aee2ff41c58166a9
     public function block_body($context, array $blocks = array())
     {
         // line 16
-        echo "    <div id=\"blockImages\">
-        ";
-        // line 17
+        echo "    <div id=\"contenu\">
+        <div id=\"blockImages\">
+            ";
+        // line 18
         if ((twig_length_filter($this->env, (isset($context["images"]) ? $context["images"] : $this->getContext($context, "images"))) > 5)) {
-            // line 18
-            echo "            <!--<a href=\"#\"><div id=\"fleche\"/></div></a>-->
-            <div class=\"colonne-nav\">
-                    <a href=\"#\" class=\"prev\"></a>
+            // line 19
+            echo "                <!--<a href=\"#\"><div id=\"fleche\"/></div></a>-->
+                <div class=\"colonne-nav\">
+                        <a href=\"#\" class=\"prev\"></a>
 
-            </div>
-        ";
+                </div>
+            ";
         }
-        // line 24
-        echo "        <div id=\"colonneImages\" >
-            <div class=\"colonne-products\">
-            <div class=\"colonne-products-holder\">
-            <ul>    
-                ";
-        // line 28
+        // line 25
+        echo "            <div id=\"colonneImages\" >
+                <div class=\"colonne-products\">
+                <div class=\"colonne-products-holder\">
+                <ul>    
+                    ";
+        // line 29
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["images"]) ? $context["images"] : $this->getContext($context, "images")));
         foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
-            // line 29
-            echo "
-                    ";
             // line 30
+            echo "
+                        ";
+            // line 31
             if (($this->getAttribute($context["image"], "resolution", array()) == "75x75")) {
-                // line 31
-                echo "                        <li><img src=\"";
+                // line 32
+                echo "                            <li><img src=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(("" . $this->getAttribute($context["image"], "adresse", array()))), "html", null, true);
                 echo "\" alt=\"";
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["images"]) ? $context["images"] : $this->getContext($context, "images")), 0, array()), "alt", array()), "html", null, true);
@@ -103,66 +104,93 @@ class __TwigTemplate_9763c22660f3583a0dcbc16e28201b0f2dd6f666822aee2ff41c58166a9
                 echo twig_escape_filter($this->env, $this->getAttribute($context["image"], "nomImage", array()), "html", null, true);
                 echo "\" values=\"null\" class=\"imagescol\"/></li>
 
-                    ";
+                        ";
             }
-            // line 34
-            echo "                ";
+            // line 35
+            echo "                    ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         echo "      
-            </ul>
-            </div>
+                </ul>
+                </div>
 
 
+                </div>
             </div>
-        </div>
-        ";
-        // line 41
+            ";
+        // line 42
         if ((twig_length_filter($this->env, (isset($context["images"]) ? $context["images"] : $this->getContext($context, "images"))) > 5)) {
-            // line 42
-            echo "            <!--<a href=\"#\"><div id=\"fleche\"/></div></a>-->
-            <div class=\"colonne-nav\">
+            // line 43
+            echo "                <!--<a href=\"#\"><div id=\"fleche\"/></div></a>-->
+                <div class=\"colonne-nav\">
 
-                    <a href=\"#\" class=\"next\"></a>
-            </div>
-        ";
+                        <a href=\"#\" class=\"next\"></a>
+                </div>
+            ";
         }
-        // line 48
-        echo "    </div>
-    
-    ";
-        // line 50
-        $context["image1"] = 0;
+        // line 49
+        echo "        </div>
+
+        ";
         // line 51
-        echo "    ";
+        $context["image1"] = 0;
+        // line 52
+        echo "        ";
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["images"]) ? $context["images"] : $this->getContext($context, "images")));
         foreach ($context['_seq'] as $context["_key"] => $context["image"]) {
-            // line 52
-            echo "        ";
-            if ((twig_in_filter($this->getAttribute($context["image"], "resolution", array()), array(0 => "1200x1200", 1 => "1400x1400", 2 => "1500x1500")) && (is_string($__internal_5e12e7f51a619993fffed423a2d31717d27be930ff7d566b96eca95417f292bc = $this->getAttribute($context["image"], "nomImage", array())) && is_string($__internal_8b0be9700e77b79f3df76c0295de2725837bf2120dee8e160793f2342d52ede0 = "av_") && ('' === $__internal_8b0be9700e77b79f3df76c0295de2725837bf2120dee8e160793f2342d52ede0 || 0 === strpos($__internal_5e12e7f51a619993fffed423a2d31717d27be930ff7d566b96eca95417f292bc, $__internal_8b0be9700e77b79f3df76c0295de2725837bf2120dee8e160793f2342d52ede0))))) {
-                // line 53
-                echo "            ";
-                $context["image1"] = $this->getAttribute($context["image"], "adresse", array());
+            // line 53
+            echo "            ";
+            if ((twig_in_filter($this->getAttribute($context["image"], "resolution", array()), array(0 => "1200x1200", 1 => "1400x1400", 2 => "1500x1500")) && (is_string($__internal_925c339328adc75a406dc00e2b77e9e2f3fafb57739eb55f7aed5275bb26c26c = $this->getAttribute($context["image"], "nomImage", array())) && is_string($__internal_9734333cf8119d3cc6618f04dc354d67d6e2c635c22d340267bcdfbf920586cb = "av_") && ('' === $__internal_9734333cf8119d3cc6618f04dc354d67d6e2c635c22d340267bcdfbf920586cb || 0 === strpos($__internal_925c339328adc75a406dc00e2b77e9e2f3fafb57739eb55f7aed5275bb26c26c, $__internal_9734333cf8119d3cc6618f04dc354d67d6e2c635c22d340267bcdfbf920586cb))))) {
                 // line 54
-                echo "        ";
+                echo "                ";
+                $context["image1"] = $this->getAttribute($context["image"], "adresse", array());
+                // line 55
+                echo "            ";
             }
-            // line 55
-            echo "    ";
+            // line 56
+            echo "        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['image'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 56
-        echo "    
-    <img id=\"imagePrincipale\" src=\"";
         // line 57
+        echo "
+        <img id=\"imagePrincipale\" src=\"";
+        // line 58
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(("" . (isset($context["image1"]) ? $context["image1"] : $this->getContext($context, "image1")))), "html", null, true);
         echo "\" alt=\"";
         echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["images"]) ? $context["images"] : $this->getContext($context, "images")), 0, array()), "alt", array()), "html", null, true);
         echo "\" />
+
+        <div id=\"description\">
+            <div id=\"marque\">
+                ";
+        // line 62
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["produit"]) ? $context["produit"] : $this->getContext($context, "produit")), "marque", array()), "nom", array()), "html", null, true);
+        echo "
+            </div>
+            <div id=\"prix\">
+                ";
+        // line 65
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["produit"]) ? $context["produit"] : $this->getContext($context, "produit")), "prix", array()), "html", null, true);
+        echo "
+            </div>
+            <div id=\"logoMarque\">
+                <img id=\"LogoMarque\" src=\"";
+        // line 68
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl(("" . $this->getAttribute($this->getAttribute((isset($context["produit"]) ? $context["produit"] : $this->getContext($context, "produit")), "marque", array()), "logoAdresse", array()))), "html", null, true);
+        echo "\" alt=\"";
+        echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute((isset($context["images"]) ? $context["images"] : $this->getContext($context, "images")), 0, array()), "alt", array()), "html", null, true);
+        echo "\" />
+            </div>
+            <div id=\"taille\">
+
+            </div>
+        </div>
+    </div>
 ";
     }
 
@@ -178,6 +206,6 @@ class __TwigTemplate_9763c22660f3583a0dcbc16e28201b0f2dd6f666822aee2ff41c58166a9
 
     public function getDebugInfo()
     {
-        return array (  162 => 57,  159 => 56,  153 => 55,  150 => 54,  147 => 53,  144 => 52,  139 => 51,  137 => 50,  133 => 48,  125 => 42,  123 => 41,  109 => 34,  98 => 31,  96 => 30,  93 => 29,  89 => 28,  83 => 24,  75 => 18,  73 => 17,  70 => 16,  67 => 15,  62 => 12,  59 => 11,  52 => 8,  49 => 7,  42 => 4,  39 => 3,  11 => 1,);
+        return array (  184 => 68,  178 => 65,  172 => 62,  163 => 58,  160 => 57,  154 => 56,  151 => 55,  148 => 54,  145 => 53,  140 => 52,  138 => 51,  134 => 49,  126 => 43,  124 => 42,  110 => 35,  99 => 32,  97 => 31,  94 => 30,  90 => 29,  84 => 25,  76 => 19,  74 => 18,  70 => 16,  67 => 15,  62 => 12,  59 => 11,  52 => 8,  49 => 7,  42 => 4,  39 => 3,  11 => 1,);
     }
 }

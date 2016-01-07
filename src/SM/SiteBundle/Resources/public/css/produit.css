@@ -9,13 +9,13 @@ and open the template in the editor.
 */
 
 
-#colonneImages {width: 77px; height: 482px; margin: 50px 30px 0px 20px; float: left; overflow: hidden;}
+#colonneImages {width: 77px; height: 482px; margin: 10px 30px 0px 20px; float: left; overflow: hidden;}
 .imagescol {border-style: ridge;border-width: 1px;}
 #bottomCouche2 {    margin-top: 80px;}
 #fleche { width: 40px; height: 40px; background-image: url('../images/icons.png'); background-position: 97px -2799px;
           display: block; margin-top: 530px; margin-left: 37px;}
 #blockImages{width: 77px; display: inline-block;}
-#imagePrincipale{margin-left: -50px; width:500px; height:500px }
+#imagePrincipale{display: inline-block; margin-left: -50px; width:500px; height:500px }
     
 .colonne-products {  position:relative; height:482px; overflow:hidden; }
 .colonne-products ul{ list-style-type: none; height:482px; position:relative; overflow:hidden; /*width:805px;*/}
@@ -39,14 +39,21 @@ and open the template in the editor.
     display: block;
     margin-top: 490px;
     margin-left: 38px;
+    top:0px;
 }
 .colonne-nav a.prev{
     position: relative;
     width: 40px;
-    height: 40px;
+    //height: 40px;
     background-image: url('../images/icons.png');
     background-position: 97px -2750px;
     display: block;
     margin-left: 38px;
+    top:0px;
+}
+
+#description{
+    display: inline-block;
+    vertical-align: top;
 }
 
