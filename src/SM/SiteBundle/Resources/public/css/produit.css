@@ -55,5 +55,39 @@ and open the template in the editor.
 #description{
     display: inline-block;
     vertical-align: top;
+    
 }
 
+#prix{
+    display: inline-block;
+    vertical-align: bottom;
+    font-size:20px;
+    padding-left: 150px;
+    padding-bottom: 1px;
+    color: #A30202;
+}
+
+#modele{
+    display: inline-block;
+
+}
+
+#modele h1{
+    color: #A30202; 
+}
+
+#info{
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 40px;
+    border-bottom: 1px dotted #C74B4B;
+}
+
+.imagesfamille{
+    height: 100px;
+    width: 100px;
+}
+
+.list-style-type-none{
+    list-style-type: none;
+}

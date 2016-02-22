@@ -71,6 +71,15 @@ class Produit
     private $marque;
     
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="familleProduit", type="integer")
+     */
+    private $familleProduit;
+    
+    
+    
+    /**
      * Get id
      *
      * @return integer 
@@ -241,5 +250,30 @@ class Produit
     public function getMarque()
     {
         return $this->marque;
+    }
+
+    
+
+    /**
+     * Set familleProduit
+     *
+     * @param integer $familleProduit
+     * @return Produit
+     */
+    public function setFamilleProduit($familleProduit)
+    {
+        $this->familleProduit = $familleProduit;
+
+        return $this;
+    }
+
+    /**
+     * Get familleProduit
+     *
+     * @return integer 
+     */
+    public function getFamilleProduit()
+    {
+        return $this->familleProduit;
     }
 }

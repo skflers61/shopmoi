@@ -77,11 +77,57 @@ class ProduitController extends Controller
         );
         //print_r($produit);
         //print_r($listImages);
+        
+        //produits de la meme famille (couleurs diffenrentes)
+        $produitfamilletemp = $repository->findBy(
+           array('familleProduit' => $produit->getFamilleProduit()), // Critere
+            null,        // Tri
+            null,        // Limite
+            null         // Offset     
+        );
+        
+        //on supprime le produit courant (qui a la meme valeur pour la colonne familleProduit et donc 
+        //qui est présent dans le tableau $produitfamilletemp
+        $j = 0;
+        for ($i = 0; $i < count($produitfamilletemp); $i++)
+        {
+            //le if permet d'exclure le produit courant de la liste des produits de la meme famille
+            //on utilisera pour la suite le tableau $produitfamille
+            if($produitfamilletemp[$i]->getId() != $id){
+                $produitfamille[$j] = $produitfamilletemp[$i];
+                $j++;
+            }
+            
+        }
+        
+        //images des produits de la meme famille que le produit courant
+        //on rempli notre tableau des images en fontion du nombre de produits dans le tableau $produitfamille
+        for ($i = 0; $i < count($produitfamille); $i++)
+        {
+                $listImagesfamille[$i] = $repository2->findBy(
+                    array('produit' => $produitfamille[$i]->getId()), // Critere
+                    null,        // Tri
+                    null,        // Limite
+                    null         // Offset
+                );
+           
+        }
+        //*
+        var_dump($produitfamille);
+        echo"-----------------------------------------";
+        echo"$id";
+        echo"-----------------------------------------";
+        var_dump($listImagesfamille); 
+        //*/
+        
+        
     //affichage du template
     return $this->render('SMSiteBundle:Produit:produit.html.twig',array(
-    'produit' => $produit,'images' => $listImages,
+    'produit' => $produit,'images' => $listImages,'produitfamille' => $produitfamille,'imagesfamille' => $listImagesfamille,
     ));
   }
+  
+  
 }
 
 ?>

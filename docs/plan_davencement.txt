@@ -9,4 +9,7 @@ plan d'avancement:
 ---------------------------------
 Dernière modif:
 
-fonction jquery pour changer les grandes image en appuyant sur les petites image dans produit.twig
+ajouter images pour tous les produits
+
+produit.html.twig  ligne 104 :  créer une fonction qui permet de sortir la couleur du produit (entre les <p>) 
+                                en fonction de l'image qui est généré juste avant

@@ -15,6 +15,8 @@
 {% block body %}
     <div id="contenu">
         <div id="blockImages">
+            
+            {# Si le nombre d'images dans la colonne d'images est supérieur à 5, on affiche les fleches de navigation #}
             {% if images|length > 5 %}
                 <!--<a href="#"><div id="fleche"/></div></a>-->
                 <div class="colonne-nav">
@@ -22,10 +24,12 @@
 
                 </div>
             {% endif %}
+            
             <div id="colonneImages" >
                 <div class="colonne-products">
                 <div class="colonne-products-holder">
                 <ul>    
+                    {# on affiche toutes les images du tableau d'images qui ont une résolution égale à 75x75 #}
                     {% for image in images %}
 
                         {% if image.resolution == "75x75" %}
@@ -39,6 +43,7 @@
 
                 </div>
             </div>
+            {# Si le nombre d'images dans la colonne d'images est supérieur à 5, on affiche les fleches de navigation #}
             {% if images|length > 5 %}
                 <!--<a href="#"><div id="fleche"/></div></a>-->
                 <div class="colonne-nav">
@@ -58,19 +63,56 @@
         <img id="imagePrincipale" src="{{ asset(''~image1 ) }}" alt="{{ images.0.alt }}" />
 
         <div id="description">
+            <div id="info">
+                <div id="modele">
+                    <h1>{{ produit.description}}</h1>
+                    {{ produit.modele}}
+                </div>
+                <div id="prix">
+                    {{ produit.prix}} €
+                </div>
+            </div>
+                
             <div id="marque">
-                {{ produit.marque.nom}}
+                {# produit.marque.nom #}
+                
             </div>
-            <div id="prix">
-                {{ produit.prix}}
-            </div>
+            
             <div id="logoMarque">
                 <img id="LogoMarque" src="{{ asset(''~produit.marque.logoAdresse ) }}" alt="{{ images.0.alt }}" />
             </div>
+            
             <div id="taille">
 
             </div>
         </div>
+        
+            <div id="coloris">    
+                <div id="titre">    
+                    <h2>Disponible aussi en:</h2>
+                </div>
+                <div id="color">   
+                    <ul class="list-style-type-none">    
+                    {# on parcours le tableau contenant les images de tous les produits de la meme famille #}    
+                    {% for imagefamille in imagesfamille %}
+                        
+                        {# Comme il y a plusieurs produits dans ce tableau, il faut faire un 2eme for pour parcourir les produits séparemment  #} 
+                        {% for famille in imagefamille %}
+                            {#  in ["100x100", "231x383"]   #}
+                            {% if famille.resolution == "100x100"%}
+                                <li><img src="{{ asset(''~famille.adresse ) }}" alt="{{ imagefamille.0.alt }}" name="{{ famille.nomImage }}" values="null" class="imagesfamille"/>
+                                    <p style="width:100px;text-align: center;"> ++++++++++++++++++{% for produit in produitfamille %}++++++++++++++++++++  </p>
+                                </li>
+                            {% endif %}        
+                            
+                        {% endfor %}
+                        
+                    {% endfor %}  
+                    
+                    </ul>
+             
+                </div>
+            </div>
     </div>
 {% endblock %}
 
