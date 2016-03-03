@@ -112,13 +112,13 @@ class ProduitController extends Controller
                 );
            
         }
-        //*
+        /*
         var_dump($produitfamille);
         echo"-----------------------------------------";
         echo"$id";
         echo"-----------------------------------------";
         var_dump($listImagesfamille); 
-        //*/
+        */
         
         
     //affichage du template
@@ -126,6 +126,12 @@ class ProduitController extends Controller
     'produit' => $produit,'images' => $listImages,'produitfamille' => $produitfamille,'imagesfamille' => $listImagesfamille,
     ));
   }
+  
+  /*
+  public function produitCorespondantAImage($id)
+  {
+      
+  }*/
   
   
 }

@@ -91,3 +91,11 @@ and open the template in the editor.
 .list-style-type-none{
     list-style-type: none;
 }
+#color{
+    height: 120px;
+}
+
+#color ul li {
+    float: left;
+    margin-top: 10px;
+}

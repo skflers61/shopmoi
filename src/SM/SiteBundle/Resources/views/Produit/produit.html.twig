@@ -98,10 +98,13 @@
                         
                         {# Comme il y a plusieurs produits dans ce tableau, il faut faire un 2eme for pour parcourir les produits séparemment  #} 
                         {% for famille in imagefamille %}
-                            {#  in ["100x100", "231x383"]   #}
-                            {% if famille.resolution == "100x100"%}
+                            
+                            {% if famille.resolution == "100x100" %}
+                                
                                 <li><img src="{{ asset(''~famille.adresse ) }}" alt="{{ imagefamille.0.alt }}" name="{{ famille.nomImage }}" values="null" class="imagesfamille"/>
-                                    <p style="width:100px;text-align: center;"> ++++++++++++++++++{% for produit in produitfamille %}++++++++++++++++++++  </p>
+                                    <p style="width:100px;text-align: center;">
+                                        {{ famille.produit.couleur }}
+                                    </p>
                                 </li>
                             {% endif %}        
                             
