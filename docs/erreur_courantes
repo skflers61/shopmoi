@@ -1,0 +1,10 @@
+
+commande: ALTER TABLE produit ADD CONSTRAINT FK_E618D5BBBCF5E72D FOREIGN KEY (categorie_id) REFERENCES Categorie (id);
+erreur: #1452 Cannot add or update a child row: a foreign key constraint fails
+cause: Le message d'erreur signifie qu'une valeur de clé étrangère n'existe pas dans la table de référence.
+       Quand le champ categorie a été crée dans la table produit, la valeur de ce champ était 0.
+       Or, dans la table Categorie il n'y avait pas de données et donc la valeur 0 n'avait pas de référence dans la table 
+       Catégorie.
+solution: insérer une ligne dans la table Categorie qui aura l'id 1 (automatiquement) et modifer les champs categorie
+          dans la table Produit et mettre 1.
+          Ensuite éxecuter la commande alter table.

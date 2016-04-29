@@ -52,7 +52,8 @@
                 </div>
             {% endif %}
         </div>
-
+        
+        {# Affiche l'image qui est de face (son nom commence par "av_") en tant qu'image principale #}
         {% set image1 = 0 %}
         {% for image in images %}
             {% if image.resolution in ["1200x1200", "1400x1400", "1500x1500"] and image.nomImage starts with 'av_' %}
@@ -82,15 +83,39 @@
                 <img id="LogoMarque" src="{{ asset(''~produit.marque.logoAdresse ) }}" alt="{{ images.0.alt }}" />
             </div>
             
-            <div id="taille">
-
+            <div id="taille"> <h2 class="label"> Tailles: </h2> <br>
+                <ul id="tailles" class="tailles-liste">
+                    <li class="size">
+                        <a href="#3750" title="S" class="small">S</a>
+                    </li>
+                    <li class="size">
+                        <a href="#3748" title="M" class="small">M</a>
+                    </li>
+                    <li class="size">
+                        <a href="#3746" title="L" class="small">L</a>
+                    </li>
+                    <li class="size">
+                        <a href="#3756" title="XL" class="small">XL</a>
+                    </li>
+                    <li class="size">
+                        <a href="#3758" title="XXL" class="small">XXL</a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div id="descriptionEntier">
+                <br> <h2 class="label"> Description: </h2>  <br>
+                <p id="policeDescription">{{ produit.descriptionEntier}}</p>
+            </div>
+            <div id="panier"> 
+                <button type="submit" id="PanierBtn" class="PanierButton" name="panier">
+                    <span id="addpanier">Ajouter au panier</span>
+                </button>
             </div>
         </div>
         
             <div id="coloris">    
-                <div id="titre">    
-                    <h2>Disponible aussi en:</h2>
-                </div>
+                
                 <div id="color">   
                     <ul class="list-style-type-none">    
                     {# on parcours le tableau contenant les images de tous les produits de la meme famille #}    
@@ -100,8 +125,10 @@
                         {% for famille in imagefamille %}
                             
                             {% if famille.resolution == "100x100" %}
-                                
-                                <li><img src="{{ asset(''~famille.adresse ) }}" alt="{{ imagefamille.0.alt }}" name="{{ famille.nomImage }}" values="null" class="imagesfamille"/>
+                                <div id="title">    
+                                    <h3 class="label">Couleurs disponibles</h3>
+                                </div>
+                                <li><a href="{{ path('produit_route', { 'id': famille.produit.id }) }}"><img src="{{ asset(''~famille.adresse ) }}" alt="{{ imagefamille.0.alt }}" name="{{ famille.nomImage }}" values="null" class="imagesfamille"/></a>
                                     <p style="width:100px;text-align: center;">
                                         {{ famille.produit.couleur }}
                                     </p>
@@ -114,6 +141,36 @@
                     
                     </ul>
              
+                </div>
+            </div>
+            <div id="recommandation">  
+                <div id="title">  
+                    <h3 class="label">ShopMoi vous recommande</h3>
+                </div>
+                <div id="recomm">    
+                    
+                    
+                    <ul class="list-style-type-none">    
+                    {# on parcours le tableau contenant les images de tous les produits de la meme famille #}    
+                    {% for imagerecommandation in imagesrecommandation %}
+                        
+                        {# Comme il y a plusieurs produits dans ce tableau, il faut faire un 2eme for pour parcourir les produits séparemment  #} 
+                        {% for recommandation in imagerecommandation %}
+                            
+                            {% if recommandation.resolution == "100x100" %}
+                                
+                                <li><a href="{{ path('produit_route', { 'id': recommandation.produit.id }) }}"><img src="{{ asset(''~recommandation.adresse ) }}" alt="{{ imagerecommandation.0.alt }}" name="{{ recommandation.nomImage }}" values="null" class="imagesfamille"/></a>
+                                    <p style="width:100px;text-align: center;">
+                                        {{ recommandation.produit.description }}
+                                    </p>
+                                </li>
+                            {% endif %}        
+                            
+                        {% endfor %}
+                        
+                    {% endfor %}  
+                    
+                    </ul>
                 </div>
             </div>
     </div>

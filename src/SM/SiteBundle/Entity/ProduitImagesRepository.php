@@ -20,6 +20,8 @@ class ProduitImagesRepository extends EntityRepository
         ->from($this->_entityName, 'i')
         ->join('i.produit', 'p')
         ->addSelect('p')
+        ->where('i.resolution = :resol')
+        ->setParameter('resol', '231x383')
         ->orderBy('p.nbVente','DESC')
         ->setMaxResults(4)
       ;

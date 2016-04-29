@@ -54,6 +54,9 @@ class ProduitController extends Controller
             $em->flush();
             echo("7");
     */
+      
+        
+      
         //les produits
         $repository = $this
         ->getDoctrine()
@@ -102,36 +105,94 @@ class ProduitController extends Controller
         
         //images des produits de la meme famille que le produit courant
         //on rempli notre tableau des images en fontion du nombre de produits dans le tableau $produitfamille
-        for ($i = 0; $i < count($produitfamille); $i++)
+        if (isset($produitfamille) ){
+            for ($i = 0; $i < count($produitfamille); $i++)
+            {
+                    $listImagesfamille[$i] = $repository2->findBy(
+                        array('produit' => $produitfamille[$i]->getId()), // Critere
+                        null,        // Tri
+                        null,        // Limite
+                        null         // Offset
+                    );
+
+            }
+        }
+        
+        
+        /*------------------------------------------------------------------------------------------*/
+        //produits de la meme categorie que le produit courant
+        $produitRecommandationtemp = $repository->findBy(
+           array('categorie' => $produit->getCategorie()), // Critere
+            null,        // Tri
+            null,        // Limite
+            null         // Offset     
+        );
+        
+        //on supprime le produit courant (qui a la meme valeur pour la colonne familleProduit et donc 
+        //qui est présent dans le tableau $produitfamilletemp
+        $j = 0;
+        for ($i = 0; $i < count($produitRecommandationtemp); $i++)
         {
-                $listImagesfamille[$i] = $repository2->findBy(
-                    array('produit' => $produitfamille[$i]->getId()), // Critere
+            
+            if (isset($produitfamille )){
+            for ($k = 0; $k < count($produitfamille); $k++)
+                {
+                    //le if permet d'exclure le produit courant de la liste des produits de la meme famille
+                    //on utilisera pour la suite le tableau $produitfamille
+                    if($produitRecommandationtemp[$i]->getId() != $id && $produitRecommandationtemp[$i]->getId() !=  $produitfamille[$k]->getId()){
+                        $produitrecommandation[$j] = $produitRecommandationtemp[$i];
+                        $j++;
+                        break;
+                    }
+                }
+            }
+            else{
+                //le if permet d'exclure le produit courant de la liste des produits de la meme famille
+                    //on utilisera pour la suite le tableau $produitfamille
+                    if($produitRecommandationtemp[$i]->getId() != $id ){
+                        $produitrecommandation[$j] = $produitRecommandationtemp[$i];
+                        $j++;
+                    }
+            }
+            
+        }
+        
+        //images des produits de la meme famille que le produit courant
+        //on rempli notre tableau des images en fontion du nombre de produits dans le tableau $produitfamille
+        for ($i = 0; $i < count($produitrecommandation); $i++)
+        {
+                $listImagesrecommandation[$i] = $repository2->findBy(
+                    array('produit' => $produitrecommandation[$i]->getId()), // Critere
                     null,        // Tri
                     null,        // Limite
                     null         // Offset
                 );
-           
+
         }
         /*
+        echo"produitfamille:";
         var_dump($produitfamille);
         echo"-----------------------------------------";
         echo"$id";
         echo"-----------------------------------------";
+        echo"listImagesfamille:";
         var_dump($listImagesfamille); 
         */
         
         
     //affichage du template
     return $this->render('SMSiteBundle:Produit:produit.html.twig',array(
-    'produit' => $produit,'images' => $listImages,'produitfamille' => $produitfamille,'imagesfamille' => $listImagesfamille,
+        'produit' => $produit,
+        'images' => $listImages,
+        'produitfamille' => (isset($produitfamille))?$produitfamille:null,
+        'imagesfamille' => (isset($listImagesfamille))?$listImagesfamille:null,
+        'produitrecommandation' => $produitrecommandation,
+        'imagesrecommandation' => $listImagesrecommandation,
     ));
   }
   
-  /*
-  public function produitCorespondantAImage($id)
-  {
-      
-  }*/
+
+  
   
   
 }

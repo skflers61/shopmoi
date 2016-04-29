@@ -88,15 +88,10 @@ $(document).ready(function() {
             var name1=$(this).attr('name');
             var name2=name1.substring(0, name1.lastIndexOf("_"));
             
-            if ((name2 == 'zoom') || (name2 == 'bas')){
-                 $("#imagePrincipale").attr('src' , src2+'/'+name2+'_1200x1200'+'.jpg');
-            }
-            else if ((name2 == 'profil') || (name2 == 'profil2') || (name2 == 'profilar')){
-                 $("#imagePrincipale").attr('src' , src2+'/'+name2+'_1500x1500'+'.jpg');
-            }
-            else{ 
-                 $("#imagePrincipale").attr('src' , src2+'/'+name2+'_1400x1400'+'.jpg');
-            }
+            $("#imagePrincipale").attr('src' , src2+'/'+name2+'_G'+'.jpg');
+            
+            
+            
         });  
         
         

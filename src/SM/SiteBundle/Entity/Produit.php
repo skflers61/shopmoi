@@ -77,6 +77,22 @@ class Produit
      */
     private $familleProduit;
     
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="descriptionEntier", type="string", length=10000)
+     */
+    private $descriptionEntier;
+    
+    
+    /**
+    * @ORM\ManyToOne(targetEntity="SM\SiteBundle\Entity\Categorie", cascade={"persist"})
+    * @ORM\JoinColumn(nullable=false)
+    */
+    private $categorie;
+    
+    
+    
     
     
     /**
@@ -275,5 +291,51 @@ class Produit
     public function getFamilleProduit()
     {
         return $this->familleProduit;
+    }
+
+    /**
+     * Set descriptionEntier
+     *
+     * @param string $descriptionEntier
+     * @return Produit
+     */
+    public function setDescriptionEntier($descriptionEntier)
+    {
+        $this->descriptionEntier = $descriptionEntier;
+
+        return $this;
+    }
+
+    /**
+     * Get descriptionEntier
+     *
+     * @return string 
+     */
+    public function getDescriptionEntier()
+    {
+        return $this->descriptionEntier;
+    }
+
+    /**
+     * Set categorie
+     *
+     * @param \SM\SiteBundle\Entity\Categorie $categorie
+     * @return Produit
+     */
+    public function setCategorie(\SM\SiteBundle\Entity\Categorie $categorie)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return \SM\SiteBundle\Entity\Categorie 
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
     }
 }

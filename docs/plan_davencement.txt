@@ -11,5 +11,4 @@ Dernière modif:
 
 ajouter images pour tous les produits
 
-produit.html.twig  ligne 104 :  créer une fonction qui permet de sortir la couleur du produit (entre les <p>) 
-                                en fonction de l'image qui est généré juste avant
+ajouter recommandation de produit dans la fiche produit = au hasard dans les produit de la meme categorie

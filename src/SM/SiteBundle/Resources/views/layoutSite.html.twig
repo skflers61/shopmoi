@@ -44,7 +44,7 @@
                                 <div id="title"><h3>Meilleures ventes</h3></div>
 				<ul>
 				<li>
-				    	<a href="#"><img src="{{ asset(''~images.0.adresse ) }}" alt="{{ images.0.alt }}" /></a>
+				    	<a href="{{ path('produit_route', { 'id': produits.0.id }) }}"><img src="{{ asset(''~images.0.adresse ) }}" alt="{{ images.0.alt }}" /></a>
                                                    
 				    	<div class="product-info">
 				    		<h3>LOREM IPSUM</h3>
@@ -56,7 +56,7 @@
 				    	</div>
 			    	</li>
 			    	<li>
-				    	<a href="#"><img src="{{ asset(''~images.1.adresse ) }}" alt="{{ images.1.alt }}" /></a>
+				    	<a href="{{ path('produit_route', { 'id': produits.1.id }) }}"><img src="{{ asset(''~images.1.adresse ) }}" alt="{{ images.1.alt }}" /></a>
 				    	<div class="product-info">
 				    		<h3>LOREM IPSUM</h3>
 				    		<div class="product-desc">
@@ -67,7 +67,7 @@
 				    	</div>
 			    	</li>
                                 <li>
-                                <a href="#"><img src="{{ asset(''~images.2.adresse ) }}" alt="{{ images.2.alt }}" /></a>
+                                <a href="{{ path('produit_route', { 'id': produits.2.id }) }}"><img src="{{ asset(''~images.2.adresse ) }}" alt="{{ images.2.alt }}" /></a>
 				    	<div class="product-info">
 				    		<h3>LOREM IPSUM</h3>
 				    		<div class="product-desc">

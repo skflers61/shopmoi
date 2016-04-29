@@ -1,0 +1,7 @@
+Ce fichier décrit les résolutions des images utilisées dans le site.
+
+75x75: produit.twig.html, colonnes des images miniatures
+1200x1200 1200x1200 1200x1200: produit.twig.html, images principales
+100x100: produit.twig.html, autres produits de la meme famille
+
+231x383: site.twig.html, dans la partie meilleurs ventes

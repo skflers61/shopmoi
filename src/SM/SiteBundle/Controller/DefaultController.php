@@ -25,7 +25,11 @@ class DefaultController extends Controller
         ->getRepository('SMSiteBundle:ProduitImages');
         
         $listImages = $repository2->FindMeilleursVentes();
-        //print_r($listProduits);
+     
+      /*  echo"listProduits:";
+        var_dump($listProduits);
+        echo"listImages:";
+        var_dump($listImages);*/
         
         //affichage du template
         return $this->render('SMSiteBundle:Default:index.html.twig',array(
