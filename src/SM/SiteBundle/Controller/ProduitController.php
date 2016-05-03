@@ -179,7 +179,7 @@ class ProduitController extends Controller
         var_dump($listImagesfamille); 
         */
         
-        
+        //var_dump($listImages);
     //affichage du template
     return $this->render('SMSiteBundle:Produit:produit.html.twig',array(
         'produit' => $produit,

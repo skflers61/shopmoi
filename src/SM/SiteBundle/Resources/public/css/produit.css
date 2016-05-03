@@ -100,7 +100,9 @@ and open the template in the editor.
     margin-top: 10px;
 }
 
-
+#redtitle{
+    max-width: 200px;
+}
 
 .tailles-liste{
     list-style-type: none;

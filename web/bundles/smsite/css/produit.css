@@ -55,5 +55,124 @@ and open the template in the editor.
 #description{
     display: inline-block;
     vertical-align: top;
+    
 }
 
+#prix{
+    display: inline-block;
+    vertical-align: bottom;
+    font-size:20px;
+    padding-left: 150px;
+    padding-bottom: 1px;
+    color: #A30202;
+}
+
+#modele{
+    display: inline-block;
+
+}
+
+#modele h1{
+    color: #A30202; 
+}
+
+#info{
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 40px;
+    border-bottom: 1px dotted #C74B4B;
+}
+
+.imagesfamille{
+    height: 100px;
+    width: 100px;
+}
+
+.list-style-type-none{
+    list-style-type: none;
+}
+#color,#recomm{
+    height: 120px;
+}
+
+#color ul li,#recomm ul li {
+    float: left;
+    margin-top: 10px;
+}
+
+#redtitle{
+    max-width: 200px;
+}
+
+.tailles-liste{
+    list-style-type: none;
+  
+}
+#taille{
+    margin-top: 30px;
+}    
+
+.size{
+    float: left;
+    margin-right: 5px;
+}
+.size a{
+    padding: 2px;
+    color: #000;
+    display: block;
+    font-size: 11px;
+    font-weight: bold;
+    white-space: nowrap;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: #333 solid 1px;
+    //background-color: #303030;
+    text-transform: none;
+    font-weight: bold;
+}
+
+.size a:hover {
+    color: #FFF;
+    background-color: #000;
+}
+
+#descriptionEntier{
+    margin-top: 30px;
+}    
+
+#policeDescription{
+    color: black;
+}
+
+.label{
+    color: black;
+}
+
+#PanierBtn{
+    font-size: 16px;
+    line-height: 14px;
+    width: 100%;
+    height: 46px;
+    margin-top: 80px;
+    margin-bottom: 10px;
+    padding: 14px 10px;
+    background: #B90000;
+}
+
+#PanierBtn:hover{    
+    background: #A90303; 
+}
+
+#addpanier{
+    color: #FFF;
+    font-weight: bold;
+}
+
+#coloris{
+    margin-top: 35px;
+}
+
+#recommandation{
+    margin-top: 65px;
+}

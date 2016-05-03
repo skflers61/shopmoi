@@ -16,14 +16,28 @@
     <div id="contenu">
         <div id="blockImages">
             
-            {# Si le nombre d'images dans la colonne d'images est supérieur à 5, on affiche les fleches de navigation #}
-            {% if images|length > 5 %}
+            
+            {# on compte le nombre d'images avec la résolution 75x75 dans le tableau d'images #}
+            {% set nbimage =0 %}
+            {% for image in images %}
+                {% if image.resolution == "75x75" %}
+                    
+                    {% set nbimage = nbimage+1 %}
+                {% endif %}
+            {% endfor %}
+            
+            {# Si le nombre d'images dans la colonne d'images est supérieur à 6, on affiche les fleches de navigation #}
+            {% if nbimage > 6 %}
                 <!--<a href="#"><div id="fleche"/></div></a>-->
                 <div class="colonne-nav">
                         <a href="#" class="prev"></a>
 
                 </div>
             {% endif %}
+            
+            
+        
+            
             
             <div id="colonneImages" >
                 <div class="colonne-products">
@@ -43,8 +57,8 @@
 
                 </div>
             </div>
-            {# Si le nombre d'images dans la colonne d'images est supérieur à 5, on affiche les fleches de navigation #}
-            {% if images|length > 5 %}
+            {# Si le nombre d'images dans la colonne d'images est supérieur à 6, on affiche les fleches de navigation #}
+            {% if nbimage > 6 %}
                 <!--<a href="#"><div id="fleche"/></div></a>-->
                 <div class="colonne-nav">
 
@@ -66,7 +80,7 @@
         <div id="description">
             <div id="info">
                 <div id="modele">
-                    <h1>{{ produit.description}}</h1>
+                    <h1 id="redtitle">{{ produit.description}}</h1>
                     {{ produit.modele}}
                 </div>
                 <div id="prix">
