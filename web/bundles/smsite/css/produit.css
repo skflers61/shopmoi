@@ -55,32 +55,39 @@ and open the template in the editor.
 #description{
     display: inline-block;
     vertical-align: top;
-    
+    width: 400px;
 }
 
 #prix{
     display: inline-block;
     vertical-align: bottom;
     font-size:20px;
-    padding-left: 150px;
     padding-bottom: 1px;
     color: #A30202;
+    width: 49%;
+    text-align: right;
 }
 
 #modele{
     display: inline-block;
 
 }
-
-#modele h1{
-    color: #A30202; 
+#block1 {
+    display: inline-block;
+    width: 50%;
 }
+
 
 #info{
     display: inline-block;
     vertical-align: top;
     margin-bottom: 40px;
     border-bottom: 1px dotted #C74B4B;
+    width: 100%;
+}
+
+#block1{
+    width: 50%;
 }
 
 .imagesfamille{
@@ -102,6 +109,7 @@ and open the template in the editor.
 
 #redtitle{
     max-width: 200px;
+    color: #A30202; 
 }
 
 .tailles-liste{
