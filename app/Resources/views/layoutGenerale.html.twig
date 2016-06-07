@@ -6,6 +6,7 @@
 <html>
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <title>{% block title %}Shop Moi{% endblock %}</title>
         
         <link rel="stylesheet"  type="text/css" media="all"   href="{{ asset('bundles/smsite/css/styleGenerale.css') }}"/>
@@ -29,179 +30,61 @@
     <body>
         <!-- Shell -->	
         <div class="shell">
-                <div id="etat_connexion">
-                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                        Connecté en tant que {{ app.user.username }} - <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a> 
-                    {% else %}
-                        <a href="{{ path('fos_user_security_login') }}">Connexion</a>
-                    {% endif %}
-                </div>
+            
                 <!-- Header -->	
                 <div id="header">
                     <div id="header_background">
-                        <!--<h1 id="logo"><a href="{{ path('sm_site_homepage') }}">SM</a></h1>	-->
-
-                        <!-- Cart -->
-                        <div id="cart">
-                                <a href="#" class="cart-link">Panier</a>
-                                <a href="{{ path('fos_user_security_login') }}" class="user-link">Mon compte</a>
-                                <div class="cl">&nbsp;</div>
-                                
-                                <!-- Search -->
-                                <div id="top_search">
-                                    <form autocomplete="off" id="form_recherche" method="get" action="/sitesearch_recherche.php">
-
-                                                    <input type="text" value="Rechercher sur shopmoi.fr..." onfocus="if(this.value=='Rechercher sur shopmoi.fr...') {this.value='';this.style.color='#000';} " onblur="if(this.value=='') { this.value='Rechercher sur shopmoi.fr...';this.style.color='#999';repli_search();}" id="search_home" name="keyword" class="" style=" margin: 3px 0px 0px 0px; padding: 2px 0px 2px 0px; width: 100%; color: rgb(153, 153, 153);">
-
-                                    </form>
-                                </div>
-                                <!-- End Search -->
-                        </div>
-                        <!-- End Cart -->
-
-                        <!-- Navigation -->
-                        <div id="navigation">
-                                <ul>
-                                    {% if app.request.attributes.get('_route') == 'sm_site_homepage' %}
-                                        <li><a href="{{ path('sm_site_homepage') }}" class="active">Accueil</a></li>
-                                    {% else %}   
-                                        <li><a href="{{ path('sm_site_homepage') }}">Accueil</a></li>
-                                    {% endif %}
-                                    
-                                    {% if app.request.attributes.get('_route') == 'sm_femmes_homepage' %}
-                                        <li><a href="{{ path('sm_femmes_homepage') }}" class="active">Femmes</a></li>
-                                    {% else %}   
-                                        <li><a href="{{ path('sm_femmes_homepage') }}">Femmes</a></li>
-                                    {% endif %}
-                                    
-                                    {% if app.request.attributes.get('_route') == 'sm_hommes_homepage' %}
-                                        <li><a href="{{ path('sm_hommes_homepage') }}" class="active">Hommes</a></li>
-                                    {% else %}   
-                                        <li><a href="{{ path('sm_hommes_homepage') }}">Hommes</a></li>
-                                    {% endif %}
-                                    
-                                    {% if app.request.attributes.get('_route') == 'sm_enfants_homepage' %}
-                                        <li><a href="{{ path('sm_enfants_homepage') }}" class="active">Enfant</a></li>
-                                    {% else %}   
-                                        <li><a href="{{ path('sm_enfants_homepage') }}">Enfants</a></li>
-                                    {% endif %}
-                                    
-                                    {% if app.request.attributes.get('_route') == 'sm_nouveautes_homepage' %}
-                                        <li><a href="#" class="active">Nouveautés</a></li>
-                                    {% else %}   
-                                        <li><a href="#">Nouveautés</a></li>
-                                    {% endif %}
-                                    
-                                    {% if app.request.attributes.get('_route') == 'sm_soldes_homepage' %}
-                                        <li><a href="#" class="active">Soldes</a></li>
-                                    {% else %}   
-                                        <li><a href="#">Soldes</a></li>
-                                    {% endif %}
-                                    
-                                </ul>
-                        </div>
-                        <!-- End Navigation -->
+                        <a id="menu" href="#0">
+                            <img id="img_menu" src="{{ asset('bundles/smsite/images/mobile/threeline.png') }}" />
+                            <p id="text_menu">MENU</p>
+                        </a>
+                            
+                        <a id="logo" href="#0">
+                            <img id="img_logo" src="{{ asset('bundles/smsite/images/logo.png') }}" />
+                            
+                        </a>
+                        <ul id="right">
+                            <li class="compte">
+                                <a id="profil" href="#0">
+                                    <img id="img_profil" src="{{ asset('bundles/smsite/images/mobile/profile.png') }}"   />
+                                    <p class="text_right">PROFIL</p>
+                                </a>
+                            </li>
+                            
+                            <li class="favoris">
+                                <a id="coeur" href="#0">
+                                    <img id="img_coeur" src="{{ asset('bundles/smsite/images/mobile/heart.png') }}" />
+                                    <p class="text_right">MES FAVORIS</p>
+                                </a>
+                            </li>
+                            
+                            <li class="panier">
+                                <a id="panier" href="#0">
+                                    <img id="img_panier" src="{{ asset('bundles/smsite/images/mobile/panier.png') }}" />
+                                    <p class="text_right">PANIER</p>
+                                </a>
+                            </li>
+                        </div> 
+                            
+                            
+                            
                     </div>  
                     <!-- End HeaderBackground -->
-                      
-                    <div id="filAriane">
-                        <br>
-                        <a href="{{ path('sm_site_homepage') }}">Accueil</a> > {% block Ariane %} {% endblock %}
-                    </div>
-                     
+                    
+                    <div id="search_bar">
+
+                    </div>  
+                    <!-- End search_bar -->
+                    
                 </div>
                 <!-- End Header -->
-
+                {#
                 {% block body %}
                     
                 {% endblock %}
+                #}
 
 
-
-        	<!-- Footer -->
-                <!-- bottomCouche -->
-                <div id="bottomCouche2">
-
-                    <div id="bandeau_rassurance_bas_site">
-                                    <div id="rassurance_livraison" onclick="callColorBox('/popup_rassurance_livraison.php');" style="width:25%;" class="encart_rassurance">
-                                    <div id="image_livraison"></div>
-                                    <div class="text_rassurance_titre">LIVRAISON GRATUITE
-                                        <div class="text_rassurance_sstitre">dès 15€ d'achats</div>
-                                    </div>
-                            </div>
-
-                            <div id="rassurance_satisfait" onclick="callColorBox('/popup_rassurance_satisfait.php');" style="width:25%;" class="encart_rassurance">
-
-                                    <div id="image_satisfait"></div>
-                                    <div class="text_rassurance_titre">RETOUR &amp; ECHANGE
-                                        <div class="text_rassurance_sstitre">GRATUITS</div>
-                                    </div>
-                            </div>
-
-                            <div id="rassurance_3x" onclick="callColorBox('/popup/paiement_3x.php');" style="width:22%;" class="encart_rassurance">
-
-                                    <div id="image_3x"></div>
-                                    <div class="text_rassurance_titre">Paiement en 3 fois
-                                        <div class="text_rassurance_sstitre">dès 100€ d'achats</div>
-                                    </div>
-
-
-                            </div>
-                            <div id="rassurance_expedition" onclick="callColorBox('/popup_rassurance_expedition.php');" style="width:22%;" class="encart_rassurance">
-                                <div id="image_expedition"></div>
-                                <div class="text_rassurance_titre">EXPÉDITION SOUS 24h
-                                    <div class="text_rassurance_sstitre">100% des articles en stock</div>
-                                </div>
-                            </div>
-
-                    </div>
-
-                </div>
-                <!-- End bottomCouche -->
-                
-                
-                <!-- Text Cols -->
-		<div class="cols">
-			<div class="cl">&nbsp;</div>
-			<div class="col">
-				<h3 class="ico ico1">Donec imperdiet</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
-				<p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
-			</div>
-			<div class="col">
-				<h3 class="ico ico2">Donec imperdiet</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
-				<p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
-			</div>
-			<div class="col">
-				<h3 class="ico ico3">Donec imperdiet</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
-				<p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
-			</div>
-			<div class="col col-last">
-				<h3 class="ico ico4">Donec imperdiet</h3>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec imperdiet, metus ac cursus auctor, arcu felis ornare dui.</p>
-				<p class="more"><a href="#" class="bul">Lorem ipsum</a></p>
-			</div>
-			<div class="cl">&nbsp;</div>
-		</div>
-		<!-- End Text Cols -->
-                
-                <div id="footer">
-                        <p class="left">
-                                <a href="#">Home</a>
-                                <span>|</span>
-                                <a href="#">Support</a>
-                                <span>|</span>
-                                <a href="#">My Account</a>
-                                <span>|</span>
-                                <a href="#">The Store</a>
-                                <span>|</span>
-                                <a href="#">Contact</a>
-                        </p>
-                        
-                </div>
-                <!-- End Footer -->
 
         </div>	
         <!-- End Shell -->

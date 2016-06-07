@@ -94,6 +94,45 @@ $(document).ready(function() {
             
         });  
         
-        
+        //changer image menu au survol du li
+        var src_1=$("#img_profil").attr('src');
+        var src_2=src_1.substring(0, src_1.lastIndexOf("/"));   
+        $(".compte").hover(
+           
+            
+            function () {
+              $("#img_profil").attr('src',src_2+'/profile_red.png');  
+            },
+            function () {
+               $("#img_profil").attr('src',src_1);  
+            }
+           
+        ); 
+        var src_3=$("#img_coeur").attr('src');
+        var src_4=src_3.substring(0, src_3.lastIndexOf("/"));   
+        $(".favoris").hover(
+           
+            
+            function () {
+              $("#img_coeur").attr('src',src_4+'/heart_red.png');  
+            },
+            function () {
+               $("#img_coeur").attr('src',src_3);  
+            }
+           
+        );
+        var src_5=$("#img_panier").attr('src');
+        var src_6=src_5.substring(0, src_5.lastIndexOf("/"));   
+        $(".panier").hover(
+           
+            
+            function () {
+              $("#img_panier").attr('src',src_6+'/panier_red.png');  
+            },
+            function () {
+               $("#img_panier").attr('src',src_5);  
+            }
+           
+        );
         
 });
